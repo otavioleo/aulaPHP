@@ -1,9 +1,8 @@
 <?php
 require_once 'menu.php';
 require_once 'footer.php';
-$page = $_REQUEST['page'];
 ?>
-<h4><?php echo $page; ?></h4>
+<h4>Empresa</h4>
 
 <table  class="table" border="1" width="70%">
     <tr>

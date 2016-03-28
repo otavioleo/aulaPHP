@@ -17,7 +17,7 @@
                         <h2>Site Simples PHP</h2>
                         <div>
                             <ul class="list-inline">
-                                <li><a href="home.php?page=Home">Home</a></li>
+                                <li><a href="index.php?page=Home">Home</a></li>
                                 <li><a href="empresa.php?page=Empresa">Empresa</a></li>
                                 <li><a href="produtos.php?page=Produtos">Produtos</a></li>
                                 <li><a href="servicos.php?page=Serviços">Serviços</a></li>

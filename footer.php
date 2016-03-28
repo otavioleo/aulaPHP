@@ -1,5 +1,4 @@
 <?php
-
 function showFooter($botao) {
    ?>
    <footer>

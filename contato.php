@@ -1,18 +1,16 @@
 <?php
 require_once 'menu.php';
 require_once 'footer.php';
-$page = $_REQUEST['page'];
-
 if (isset($_POST['submitted'])) {
-   processaForm($page);
+   processaForm();
 } else {
-   showForm($page);
+   showForm();
 }
 
-function showForm($page) {
+function showForm() {
    ?>
-   <h4><?php echo $page; ?></h4>
-   <form class="form-horizontal" role="form" name="frmContato" action="contato.php?page=<?php echo $page; ?>" method="POST">
+   <h4>Contato</h4>
+   <form class="form-horizontal" role="form" name="frmContato" action="contato.php" method="POST">
        <div class="form-group">
            <label class="control-label col-sm-1" for="nome">Nome:</label>
            <div class="col-sm-10">
@@ -46,8 +44,8 @@ function showForm($page) {
    showFooter($botao = 1);
 }
 
-function processaForm($page) {
-   echo $page;
+function processaForm() {
+   echo "<h4>Contato</h4>";
    echo "<br><br>";
    echo "Dados enviados com sucesso.";
    echo "<br><br>";
