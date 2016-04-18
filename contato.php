@@ -1,8 +1,10 @@
 <?php
+require_once 'RedBeanPHP\rb.php';
+require_once 'RedBeanPHP\conecta.php';
 require_once 'menu.php';
 require_once 'footer.php';
 if (isset($_POST['submitted'])) {
-   processaForm();
+   processaForm($conexao);
 } else {
    showForm();
 }
@@ -44,7 +46,7 @@ function showForm() {
    showFooter($botao = 1);
 }
 
-function processaForm() {
+function processaForm($conexao) {
    echo "<h4>Contato</h4>";
    echo "<br><br>";
    echo "Dados enviados com sucesso.";
@@ -57,5 +59,15 @@ function processaForm() {
    echo "<br><br>";
    echo "Mensagem = $_REQUEST[mensagem]";
    echo "<br><br>";
+   
+   $tabela = $conexao->dispense('clientes');
+
+   $tabela->nome = $_POST['nome'];
+   $tabela->email = $_POST['email'];
+   $tabela->assunto = $_POST['assunto'];
+   $tabela->mensagem = $_POST['mensagem'];
+   $conexao->store($tabela);
+   $submmitted = $_POST['submitted'];
+
    showFooter($botao = 0);
 }

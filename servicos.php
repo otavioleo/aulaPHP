@@ -1,16 +1,18 @@
-<?php 
-require_once 'menu.php'; 
-require_once 'footer.php';
-?>
-<h4>Serviços</h4>
-<div>
-    <ul class="list-group">
-        <li>PORTÃO DESLIZANTE/BASCULANTE/PIVOTANTE CONDOMÍNIO</li>
-        <li>INSTALAÇÃO INTERFONE/ALARMES/CÂMERAS</li>
-        <li>CANCELA ELETRÔNICA BAIXO/ALTO FLUXO</li>
-    </ul>
-</div>
 <?php
-showFooter($botao=0);
- ?>
 
+require_once 'RedBeanPHP\rb.php';
+require_once 'RedBeanPHP\conecta.php';
+require_once 'menu.php';
+require_once 'footer.php';
+print "<h4>Servi&ccedil;os</h4>";
+print "<div>";
+print "<ul class='list-group'>";
+$tabela = $conexao->findAll('servicos', 'ORDER BY produto ASC');
+foreach ($tabela as $b) {
+   print "<li>";
+   echo $b->produto . " - " . $b->tipo;
+   print "</li>";
+}
+print "</ul>";
+print "</div>";
+showFooter($botao = 0);
