@@ -19,7 +19,7 @@ $tabela = $conexao->exec("CREATE TABLE IF NOT EXISTS `clientes` (
   `assunto` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `mensagem` varchar(300) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;");
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;");
 echo " - Ok<br>";
 
 echo "Inserindo dados na tabela clientes";
