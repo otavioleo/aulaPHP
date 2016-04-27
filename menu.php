@@ -53,15 +53,18 @@ function showHome() {
                            require_once 'footer.php';
                            showHome();
                            $consulta = $_REQUEST['consulta'];
-                           $tabela = $conexao->find('produtos', ' produto LIKE ? ', ["%$consulta%"]);
+                           $tabela = $conexao->find('conteudos', ' conteudo LIKE ? ', ["%$consulta%"]);
                            if (!count($tabela)) {
                               print "<script>alert('Pesquisa não localizada!');javascript:history.back(1);</script>";
                               exit;
                            }
                            print "<table width='200' border='0' cellspacing='0' cellpadding='0'>";
                            foreach ($tabela as $b) {
+                              $pagina_ = "$b->pagina".".php" ;
+                              $pagina = $b->titulo;
                               print "<tr><td nowrap>";
-                              print "<a href='produtos.php?gera_produtos=1&id_produto=$b->id'>$b->produto - $b->descricao</a>";
+                              print "<a href='$pagina_'>$pagina</a>";
+//                              print "<a href='produtos.php?gera_produtos=1&id_produto=$b->id'>$b->produto - $b->descricao</a>";
                               print "</td></tr>";
                            }
                            print "</table>";
