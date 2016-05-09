@@ -14,7 +14,7 @@ function showHome() {
    <!DOCTYPE html>
    <html>
        <head>
-           <meta charset="ISO-8859-1">
+           <meta charset="UTF-8">
            <title>Site Simples PHP</title>
            <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
            <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->

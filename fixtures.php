@@ -1,5 +1,8 @@
-<?php
 
+<meta charset="UTF-8">
+
+
+<?php
 require_once 'RedBeanPHP\rb.php';
 require_once 'RedBeanPHP\conecta.php';
 
@@ -104,6 +107,24 @@ $tabela = $conexao->exec("INSERT INTO `servicos` (`id`, `produto`, `tipo`) VALUE
 	(1, 'PORTÃO', 'DESLIZANTE/BASCULANTE/PIVOTANTE CONDOMÍNIO'),
 	(2, 'INSTALAÇÃO', 'INTERFONE/ALARMES/CÂMERAS'),
 	(3, 'CANCELA ELETRÔNICA', 'BAIXO/ALTO FLUXO');");
+echo " - Ok<br>";
+
+echo "Criando a tabela usuarios";
+$tabela = $conexao->exec("CREATE TABLE IF NOT EXISTS `usuarios` (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  u_nome VARCHAR(50) NOT NULL,
+  u_senha VARCHAR(40) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE INDEX u_nome (u_nome)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;");
+
+echo " - Ok<br>";
+
+echo "Inserindo dados na tabela usuarios";
+$tabela = $conexao->exec("INSERT INTO `usuarios` (`id`, `u_nome`, `u_senha`) VALUES
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
+(2, 'otavio', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');");
+
 echo " - Ok<br>";
 
 echo "#### Concluído ####<br>";

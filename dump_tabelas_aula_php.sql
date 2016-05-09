@@ -108,10 +108,13 @@ INSERT INTO `servicos` (`id`, `produto`, `tipo`) VALUES
 /*!40000 ALTER TABLE `servicos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela pdo.usuarios
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `u_nome` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `u_senha` varchar(40) CHARACTER SET latin1 NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `u_nome` (`u_nome`)
+CREATE TABLE pdo.usuarios (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  u_nome VARCHAR(50) NOT NULL,
+  u_senha VARCHAR(40) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE INDEX u_nome (u_nome)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO `usuarios` VALUES (1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');
+INSERT INTO `usuarios` VALUES (2, 'otavio', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
